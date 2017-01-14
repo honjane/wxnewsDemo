@@ -1,0 +1,11 @@
+<!--detail.wxml-->
+<view >
+    <view class="art-header">
+        <image src="http://img1.3lian.com/2015/w7/85/d/101.jpg" class="art-img"/>
+        <view class="art-title">{{art.title}}</view>
+        <view class="art-source">{{art.image_source}}</view>
+    </view>
+    <view class="art-content">
+      {{art.body}}
+    </view> 
+</view>

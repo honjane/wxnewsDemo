@@ -1,0 +1,38 @@
+
+<!--pages/list/list.wxml-->
+<view class="listcontainer">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" class="banners" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{banner}}">
+      <swiper-item class="banner">
+        <image src="{{img}}" class="banner-image" item-id="{{item.id}}" width="100%" height="100%" bindtap="bindViewTap" />
+        <text>{{item.title}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view>
+    <block wx:for="{{list}}" wx:for-index="id">
+      <text wx:if="{{item.header}}" class="item-header">
+      {{item.header}}
+      </text>
+      <navigator wx:else url="../detail/detail?id={{item.id}}">
+        <view class="news-item">
+          <view class="news-item-left">
+            <image src="http://tupian.enterdesk.com/uploadfile/2013/1230/20131230020714617.jpg" class="item-image" mode="center"></image>
+          </view>
+          <view class="news-item-right">
+            <text class="news-item-title">
+              {{item.title}}
+            </text>
+            <text class="news-item-title">
+              id:{{item.id}}
+            </text>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+  <view>
+    <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="loadMore" hover-class="other-button-hover"> 更多
+    </button>
+  </view>
+</view>
